@@ -8,13 +8,13 @@ app.use(express.json());
 
 const PORT = 4005;
 
-const allowedOrigins = [
-    'http://localhost:3000',
-    'https://majestic-arithmetic-a69ab6.netlify.app',
-    'https://majestic-arithmetic-a69ab6.netlify.app/api/data',
-    'https://majestic-arithmetic-a69ab6.netlify.app/api/deal'
-];
-app.use(cors({ allowedOrigins })); // Allow requests only from this origin
+// const allowedOrigins = [
+//     'http://localhost:3000',
+//     'https://majestic-arithmetic-a69ab6.netlify.app',
+//     'https://majestic-arithmetic-a69ab6.netlify.app/api/data',
+//     'https://majestic-arithmetic-a69ab6.netlify.app/api/deal'
+// ];
+// app.use(cors({ allowedOrigins })); // Allow requests only from this origin
 app.use(cors)
 
 
@@ -67,6 +67,6 @@ app.get('/api/deal', (req, res) => {
 //     console.log(`Server running on http://localhost:${PORT}`);
 // });
 
-app.listen(process.env.PORT || 3000, () => {
+app.listen(process.env.PORT || 4005, () => {
     console.log(`Server started , ${process.env.PORT}`);
 });
