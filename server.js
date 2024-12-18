@@ -15,7 +15,7 @@ const PORT = 4005;
 //     'https://majestic-arithmetic-a69ab6.netlify.app/api/deal'
 // ];
 // app.use(cors({ allowedOrigins })); // Allow requests only from this origin
-app.use(cors)
+app.use(cors())
 
 
 app.get('/', (req, res) => {
