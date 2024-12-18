@@ -2,10 +2,21 @@ const express = require('express');
 const fs = require('fs');
 const cors = require('cors');
 const app = express();
-app.use(cors({ origin: 'http://localhost:3000' })); // Allow requests only from this origin
+
+
 app.use(express.json());
 
 const PORT = 4005;
+
+const allowedOrigins = [
+    'http://localhost:3000',
+    'https://majestic-arithmetic-a69ab6.netlify.app',
+    'https://majestic-arithmetic-a69ab6.netlify.app/api/data',
+    'https://majestic-arithmetic-a69ab6.netlify.app/api/deal'
+];
+app.use(cors({ allowedOrigins })); // Allow requests only from this origin
+app.use(cors)
+
 
 app.get('/', (req, res) => {
     res.send("Hellow world")
